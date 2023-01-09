@@ -12,6 +12,8 @@ const getType = ({type}) => {
                 width: 230px;
                 height: 400px;
             `
+        default:
+            return ``
     }
 }
 

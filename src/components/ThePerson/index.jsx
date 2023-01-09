@@ -8,6 +8,7 @@ const ThePerson = () => {
     console.log("The Person");
     useEffect(() => {
         request({currUrl: "https://api.themoviedb.org/3", path: `/person/${params.id}?api_key=b8297831d5876d2ce8a0fe891bf560d9`}).then(data => {console.log(data)})
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <div>

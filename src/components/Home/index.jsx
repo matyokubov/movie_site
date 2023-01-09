@@ -37,6 +37,7 @@ const Home = () => {
     useMemo(() => {
         request({currUrl: "https://api.themoviedb.org/3", path: `/person/popular?api_key=b8297831d5876d2ce8a0fe891bf560d9`}).then(data => {dispatch({type: "popular_persons", payload: data.results}); console.log(data.results);})
         request({currUrl: "https://api.themoviedb.org/3", path: `/movie/popular?api_key=b8297831d5876d2ce8a0fe891bf560d9`}).then(data => {dispatch({type: "popular_movies", payload: data.results}); console.log(data.results);})
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
         <>
