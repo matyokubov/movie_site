@@ -2,15 +2,8 @@ const Footer = () => {
     console.log("The Navbar");
     return (
         <div className="container">
-            <p style={{color: "red"}}>
-                The Footer <br />
-                <span>Actors</span>
-                <span> - </span>
-                <span>Popular</span>
-                <span> - </span>
-                <span>Tv SHows</span>
-                <span> - </span>
-                <span>Trealers</span>
+            <p style={{color: "#777", marginTop: "3rem"}}>
+                This app was created by Firdavs Matyoqubov
             </p>
         </div>
     )

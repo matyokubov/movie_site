@@ -1,4 +1,5 @@
 import TheMovie from "./components/TheMovie"
+import ThePerson from "./components/ThePerson"
 import Home from "./components/Home"
 import Navbar from "./components/Navbar"
 import Page404 from "./components/Page404"
@@ -9,6 +10,7 @@ const Root = () => {
         <Routes>
             <Route element={<Navbar/>}>
                 <Route path="/m/:id" element={<TheMovie/>}/>
+                <Route path="/p/:id" element={<ThePerson/>}/>
                 <Route path="/en" element={<Home/>}/>
                 <Route path="*" element={<Page404/>}/>
             </Route>

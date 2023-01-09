@@ -1,0 +1,12 @@
+.info{
+   display: flex;
+   justify-content: center;
+   column-gap: 2.5rem;
+}
+.info>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: .5rem;
+}

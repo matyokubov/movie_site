@@ -1,4 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+    --textColor: #fff;
+    --pageBg: #1e1e1e;
+    --navbar: #272727;
+    --card: #343434;
+}
 *{
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;;
+}
+html, body{
+    overflow-x: hidden;
+    margin: 0;
+}
+
+body{
+    background-color: var(--pageBg);
+    color: var(--textColor);
+}
+a{
+    color: var(--textColor);
+    text-decoration: none;
+}
+.container{
+    width: 95%;
+    margin: 0 auto;
 }
