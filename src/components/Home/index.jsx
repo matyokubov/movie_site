@@ -60,7 +60,7 @@ const Home = () => {
     }, [])
     console.log(state)
     return (
-        state.failed=="wait" ? (
+        state.failed==="wait" ? (
             <MsgLayout text={"Please, wait..."}/>
         ) : state.failed ? (
             <MsgLayout text={"Connection Error"}/>

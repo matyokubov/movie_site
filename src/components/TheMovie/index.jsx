@@ -17,6 +17,7 @@ const TheMovie = () => {
             data.id ? setMovie(data) : setMovie({msg: "Movie was not found", err: true})
             console.log(data)
         }).catch(error => setMovie({msg: error, err: true}))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return !movie.err ? (
         <div className="container">
@@ -46,7 +47,8 @@ const TheMovie = () => {
                         currency: "USD"
                 })}</h4>
                 <h4>Genres: {movie.genres?.map(({name}, i) => <span key={i}>{name}{movie.genres.length-1!==i && ", "}</span>)}</h4>
-                {movie.homepage && <h4>WebSite: <a href={movie.homepage} target={"_blank"}>{movie.homepage}</a></h4>}
+                { // eslint-disable-next-line react/jsx-no-target-blank
+                movie.homepage && <h4>WebSite: <a href={movie.homepage} target={"_blank"}>{movie.homepage}</a></h4>}
                 <h4>Language: {movie.original_language}</h4>
                 <h4>Popularity: {movie.popularity}</h4>
                 <h4>Date: {movie.release_date}</h4>
