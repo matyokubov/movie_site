@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { Container, Arrow, Content, DarkLayer} from "./style.js"
 import { Button } from '../Generic'
 import "./index.css"
+import { useNavigate } from 'react-router-dom';
 
 const contentStyle = {
   height: '380px',
@@ -22,11 +23,12 @@ const GenCarousel = ({data}) => {
         if(name === "next") slider.current.next();
         else if(name === "prev") slider.current.prev();
     }
+    const navigate = useNavigate()
     return (
         <Container>
             <Carousel autoplay ref={slider}>
                 {
-                    data?.map(({id, title, overview, original_title, backdrop_path, poster_path, video}) => {
+                    data?.map(({id, title, overview, original_title, backdrop_path, poster_path}) => {
                         return (
                             <div key={id}>
                                 <div style={contentStyle}>
@@ -41,7 +43,7 @@ const GenCarousel = ({data}) => {
                                                     <div className='subtitle'>{overview}</div>
                                                 </div>
                                                 <div className='readmore'>
-                                                    <Button type={"light"}>See more</Button>
+                                                    <Button type={"light"} on={() => navigate(`/m/${id}`)}>See more</Button>
                                                 </div>
                                             </div>
                                         </div>

@@ -5,7 +5,7 @@ const getType = ({type}) => {
         case "person":
             return `
                 width: 170px;
-                height: 400px;
+                height: 320px;
             `
         case "movie":
             return `

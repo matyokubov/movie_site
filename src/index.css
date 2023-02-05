@@ -26,3 +26,15 @@ a{
     width: 95%;
     margin: 0 auto;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--pageBg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(48, 48, 48);
+    transition-duration: 500ms;
+  }

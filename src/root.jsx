@@ -1,6 +1,4 @@
-import TheMovie from "./components/TheMovie"
-import ThePerson from "./components/ThePerson"
-import Home from "./components/Home"
+import { navbar } from "./utils/navbar"
 import Navbar from "./components/Navbar"
 import Page404 from "./components/Page404"
 import { Route, Routes, Navigate } from "react-router-dom"
@@ -9,9 +7,9 @@ const Root = () => {
     return (
         <Routes>
             <Route element={<Navbar/>}>
-                <Route path="/m/:id" element={<TheMovie/>}/>
-                <Route path="/p/:id" element={<ThePerson/>}/>
-                <Route path="/en" element={<Home/>}/>
+                {navbar.map(({id, element, path}) => {
+                    return <Route key={id} path={path} element={element}/>
+                })}
                 <Route path="*" element={<Page404/>}/>
             </Route>
             <Route path="/" element={<Navigate to={"/en"}/>}/>

@@ -14,7 +14,7 @@ const CardComp = ({title, description, img, id, type}) => {
                         <span>{title}</span>
                     </div>
                 </div>
-                <p>{description}</p>
+                {description && <p>{description}</p>}
             </NavLink>
         </Card>
     )

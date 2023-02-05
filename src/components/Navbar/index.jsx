@@ -1,13 +1,15 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { Logo, Menu, Search,
-    SearchInput
-} from "./style"
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { setParams, useGetParams } from "../../utils/urlParams";
+import { Logo, Menu, Search, SearchInput} from "./style"
 import Footer from "../Footer"
-// import data from "../../utils/navbar"
 import "./index.css"
 
 const Navbar = () => {
-    console.log("The Navbar");
+    const query = useGetParams()
+    const navigate = useNavigate()
+    const onSearch = ({target}) => {
+        navigate(`/movies${setParams("m", target.value)}`)
+    } 
     return (
         <div>
             <div className="navbar container">
@@ -16,15 +18,8 @@ const Navbar = () => {
                 </div>
                 <SearchInput className="search-input">
                     <Search/>
-                    <input type="text" placeholder="Search any Movies"/>
+                    <input type="text" placeholder="Search any Movies" defaultValue={query.get("m")} onChange={onSearch}/>
                 </SearchInput>
-                {/* <ul>
-                    {
-                        data.map((item, i) => <li key={i}>
-                            <NavLink to={item.path}>{item.name}</NavLink>
-                        </li>)
-                    }
-                </ul> */}
                 <div className="dropdown">
                     <Menu/>
                 </div>

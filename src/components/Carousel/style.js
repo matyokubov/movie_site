@@ -6,7 +6,7 @@ export const Container = styled.div`
     height: 380px;
     user-select: none;
     margin-bottom: 4rem;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     .productImg{
         filter: blur(25px);
     }

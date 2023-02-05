@@ -5,6 +5,7 @@ import MsgLayout from "../MsgLayout"
 
 import useRequest from "../../hooks/useRequest";
 import { useMemo, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     console.log("Home");
@@ -38,6 +39,7 @@ const Home = () => {
                 return state;
         }
     }
+    const navigate = useNavigate()
     useMemo(() => {
         request({
             currUrl: "https://api.themoviedb.org/3",
@@ -84,6 +86,7 @@ const Home = () => {
                             ))
                         }
                     </p>
+                    <button onClick={() => navigate("/movies")}>More Movies</button>
                 </Container>
             </>
         )
